@@ -48,3 +48,7 @@ report=open("report.csv","w")
 for tiempo, cas, cli in zip(tiempo,box,pacientes):
    report.write(f"{tiempo},{cas},{cli}+\n")
 report.close()
+
+
+
+LLL
