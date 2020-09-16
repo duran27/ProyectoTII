@@ -50,5 +50,4 @@ for tiempo, cas, cli in zip(tiempo,box,pacientes):
 report.close()
 
 
-
-LLL
+#PROBANDO
