@@ -3,13 +3,13 @@ llegada= 1   #1er tipo de evento
 salida= 0    #2do tipo de evento
 
 tiempo_entre_llegadas= 2 #aprox
-tiempo_atencion_medica= ran.exponential(30)   #aprox
-total_de_pacientes= 500     #poner cantidad de pacientes diarios aprox
-pacientes_en_espera= 60   #capacidad de salas de espera
+tiempo_atencion_medica= 30   #aprox
+total_de_pacientes= 500    #poner cantidad de pacientes diarios aprox
+pacientes_en_espera=  60   #capacidad de salas de espera
 
 #inicializar 
 reloj=0
-eventos=[(llegada,ran.exponential(tiempo_entre_llegadas))] # lista de tuplas 
+eventos=[(llegada,ran.exponential(tiempo_entre_llegadas))]  #[lista de tuplas ]
 pacientes_en_espera= 100
 Box_ocupado=False #box de atención médica desocupado
 
@@ -35,7 +35,7 @@ for i in range(total_de_pacientes):
         if pacientes_en_espera > 0:
             Box_ocupado=True
             pacientes_en_espera-=1
-            eventos.append((llegada,reloj + ran.exponential(tiempo_atencion_medica)))
+            eventos.append((salida,reloj + ran.exponential(tiempo_atencion_medica)))
             eventos.sort(key=lambda tup: tup[1])
         else:
             Box_ocupado=False
@@ -43,9 +43,9 @@ for i in range(total_de_pacientes):
     pacientes.append(pacientes_en_espera)
     Box.append(Box_ocupado)
 
-#report=open("report.csv","w")
-#for tiempo, cas, cli in zip(tiempo,Box,pacientes):
-#   report.write(f"{tiempo},{cas},{cli}, +\n")
-#report.close()
-
+report=open("report.csv","w")
+for tiempo, cas, cli in zip(tiempo,Box,pacientes):
+   report.write(f"{tiempo},{cas},{cli}\n")
+report.close()
+print ("LISTO!")
 
