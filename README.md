@@ -1,5 +1,7 @@
 # ProyectoTII
 Roles
-Software Developer: Nico
-Documentarian
-Project Manager
+Software Developer: Nicolás Duran
+Documentarian: Antonia Dubost, Trinidad Erlbaum
+Project Manager: Todos unidos
+Buscador de información: Natalia Montellano, Valentina Kaufmann, Catalina Finch
+
